@@ -1,79 +1,47 @@
+document.addEventListener("DOMContentLoaded", function () {
+  new Splide('#coworking-slider', {
+    type: 'loop',
+    perPage: 1,
+    autoplay: true,
+    interval: 3500,
+    pauseOnHover: true,
+    arrows: true,
+    pagination: true,
+    drag: true,         
+    flickPower: 500,    
+  }).mount();
+});
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.getElementById("sliderTrack");
-  if (!track) return;
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFraW1ha29vbyIsImEiOiJjbWVkNXFnZHcwNml2MmxwZjdzOXR5YnFhIn0.qlVlen_tyYgJshSRbdwdgg';
 
-  const slides = Array.from(track.children);
-  const prevBtn = document.getElementById("sliderPrev");
-  const nextBtn = document.getElementById("sliderNext");
-  const dotsContainer = document.getElementById("sliderDots");
+const map = new mapboxgl.Map({
+  container: 'mapbox',
+  style: 'mapbox://styles/mapbox/dark-v11',
+  center: [30.5234, 50.4501],
+  zoom: 12,
+});
 
-  let currentIndex = 0;
+// Маркер
+new mapboxgl.Marker()
+  .setLngLat([30.5234, 50.4501])
+  .addTo(map);
 
-  // Создаём точки
-  const dots = slides.map((_, i) => {
-    const dot = document.createElement("button");
-    dot.className =
-      "w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-500 transition";
-    if (i === 0) dot.classList.add("bg-gray-800");
-    dotsContainer.appendChild(dot);
-    dot.addEventListener("click", () => goToSlide(i));
-    return dot;
+  document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu");
+  const dropdown = document.getElementById("dropdown");
+
+  menuBtn.addEventListener("click", () => {
+    dropdown.classList.toggle("hidden");
+    dropdown.classList.toggle("opacity-100");
   });
 
-  function updateSlider() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("bg-gray-800", i === currentIndex);
-      dot.classList.toggle("bg-gray-300", i !== currentIndex);
-    });
-  }
-
-  function goToSlide(index) {
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
-    currentIndex = index;
-    updateSlider();
-  }
-
-  // Кнопки
-  if (prevBtn) prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
-  if (nextBtn) nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
-
-  // Свайп на таче
-  let startX = 0;
-  let currentX = 0;
-  let isDragging = false;
-
-  track.addEventListener("touchstart", (e) => {
-    if (!e.touches[0]) return;
-    startX = e.touches[0].clientX;
-    currentX = startX;
-    isDragging = true;
-  });
-
-  track.addEventListener("touchmove", (e) => {
-    if (!isDragging || !e.touches[0]) return;
-    currentX = e.touches[0].clientX;
-  });
-
-  track.addEventListener("touchend", () => {
-    if (!isDragging) return;
-    const diff = currentX - startX;
-    const threshold = 50; // пикселей
-    if (diff > threshold) {
-      // свайп вправо -> предыдущий слайд
-      goToSlide(currentIndex - 1);
-    } else if (diff < -threshold) {
-      // свайп влево -> следующий слайд
-      goToSlide(currentIndex + 1);
+  // Закрытие при клике вне меню
+  document.addEventListener("click", (e) => {
+    if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add("hidden");
     }
-    isDragging = false;
   });
-
-  // init
-  updateSlider();
 });
 
   const video = document.getElementById('bgVideo');
