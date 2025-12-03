@@ -18,13 +18,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWFraW1ha29vbyIsImEiOiJjbWVkNXFnZHcwNml2MmxwZ
 const map = new mapboxgl.Map({
   container: 'mapbox',
   style: 'mapbox://styles/mapbox/dark-v11',
-  center: [30.5234, 50.4501],
+  center: [30.518076, 50.444816],
   zoom: 12,
 });
 
 // Маркер
 new mapboxgl.Marker()
-  .setLngLat([30.5234, 50.4501])
+  .setLngLat([30.518076, 50.444816])  
   .addTo(map);
 
   document.addEventListener("DOMContentLoaded", () => {
