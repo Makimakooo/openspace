@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link rel="icon" type="image/svg+xml" href="ico/Coworking.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Coworking</title>
+  </head>
+
+  <body class="relative">
+    <header
+      class="w-full py-4 px-4 md:px-6 flex justify-between items-center text-white bg-black/20 backdrop-blur-sm fixed top-0 left-0 z-20"
+    >
+      <a
+        href="/"
+        class="flex items-center gap-2 cursor-pointer transition-transform duration-200 hover:scale-105 hover:opacity-80"
+      >
+        <span class="material-symbols-outlined text-3xl"> beach_access </span>
+
+        <h1 class="text-xl md:text-2xl font-semibold drop-shadow-md">
+          OpenSpace for you!
+        </h1>
+      </a>
+
+      <nav class="flex gap-4 md:gap-6 text-3xl">
+        <button
+          class="hidden md:inline-flex items-center justify-center material-icons-round cursor-pointer transition-transform transition-colors duration-200 hover:scale-110 hover:text-white/70"
+        >
+          wifi
+        </button>
+
+        <button
+          class="hidden md:inline-flex items-center justify-center material-icons-round cursor-pointer transition-transform transition-colors duration-200 hover:scale-110 hover:text-white/70"
+        >
+          local_cafe
+        </button>
+
+        <button
+          class="hidden md:inline-flex items-center justify-center material-icons-round cursor-pointer transition-transform transition-colors duration-200 hover:scale-110 hover:text-white/70"
+        >
+          location_on
+        </button>
+
+        <!-- menu – видно всегда -->
+        <button
+          class="inline-flex items-center justify-center material-icons-round cursor-pointer transition-transform transition-colors duration-200 hover:scale-110 hover:text-white/70"
+        >
+          menu
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO с видео -->
+    <section
+      class="relative min-h-screen flex items-center justify-center text-white px-4 pt-24 md:pt-0 overflow-hidden"
+    >
+      <!-- видео внутри hero -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover object-center -z-10"
+      >
+        <source src="video/main.mp4" type="video/mp4" />
+      </video>
+
+      <!-- осветляющий слой -->
+      <div
+        class="absolute inset-0 bg-white/20 -z-5 pointer-events-none"
+      ></div>
+
+      <!-- левый текст -->
+      <div
+        class="hidden md:block absolute left-6 md:left-12 top-1/2 -translate-y-1/2
+              text-base md:text-lg font-medium drop-shadow-lg max-w-xs md:max-w-sm leading-relaxed"
+      >
+        Your office is anywhere. Open space created for comfort and
+        productivity: modern working areas, comfort, atmosphere and all the
+        amenities for your work.
+      </div>
+
+      <!-- центральный текст -->
+      <h2
+        class="text-3xl sm:text-4xl md:text-6xl font-bold drop-shadow-2xl text-center px-4"
+      >
+        Work. Create. Connect.
+      </h2>
+
+      <!-- правый текст -->
+      <div
+        class="hidden md:block absolute right-6 md:right-12 top-1/2 -translate-y-1/2
+              text-base md:text-lg font-medium drop-shadow-lg max-w-xs md:max-w-sm text-right leading-relaxed"
+      >
+        Rent a space for your comfortable working time and don't think about a
+        boring office. Choose a place that inspires you — with modern work
+        zones, fast Wi-Fi, coffee, and a calm atmosphere.
+      </div>
+
+      <!-- кнопка вниз -->
+      <a
+        href="#next"
+        class="absolute bottom-8 right-6 md:bottom-10 md:right-10
+           w-16 h-16 md:w-20 md:h-20
+           rounded-full border border-white/60 
+           flex items-center justify-center
+           text-white hover:scale-110 hover:bg-white/20 transition duration-300 z-10"
+      >
+        <span class="material-symbols-outlined text-5xl md:text-6xl"
+          >expand_more</span
+        >
+      </a>
+    </section>
+
+    <section
+      id="next"
+      class="scroll-mt-16 min-h-screen bg-white text-black px-6 md:px-12 py-16"
+    >
+      <h2
+        class="text-3xl md:text-4xl font-bold mt-32 text-center text-gray-900"
+      >
+        Why Choose Our Workspace?
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- CARD -->
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span class="material-icons-round text-4xl text-blue-500 mb-4 block">
+            wifi
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Fast Wi-Fi</h3>
+          <p class="text-gray-700 text-sm">
+            Reliable high-speed internet for all your tasks.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span
+            class="material-icons-round text-4xl text-green-500 mb-4 block"
+          >
+            local_cafe
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Coffee & Tea</h3>
+          <p class="text-gray-700 text-sm">
+            Unlimited drinks that keep you energetic and focused.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span
+            class="material-icons-round text-4xl text-purple-500 mb-4 block"
+          >
+            groups
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">
+            Meeting Rooms
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Fully equipped spaces for meetings, calls, and teamwork.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span class="material-icons-round text-4xl text-red-500 mb-4 block">
+            event_seat
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">
+            Comfort Zones
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Modern furniture designed for comfortable long-hour work.
+          </p>
+        </div>
+
+        <!-- 5–8 cards -->
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span
+            class="material-icons-round text-4xl text-indigo-500 mb-4 block"
+          >
+            schedule
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">
+            24/7 Access
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Work anytime — morning or night, as inspiration comes.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span
+            class="material-icons-round text-4xl text-orange-500 mb-4 block"
+          >
+            print
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">
+            Printer & Scanner
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Everything you need for your office tasks.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span
+            class="material-icons-round text-4xl text-yellow-500 mb-4 block"
+          >
+            local_parking
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Parking</h3>
+          <p class="text-gray-700 text-sm">
+            Safe and convenient parking right next to the workspace.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl 
+               hover:bg-white/70 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+        >
+          <span class="material-icons-round text-4xl text-teal-500 mb-4 block">
+            spa
+          </span>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Relax Zone</h3>
+          <p class="text-gray-700 text-sm">
+            A calm space to rest, meditate, or recharge.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-black text-white py-12 px-6 md:px-16 mt-20">
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <!-- Блок 1 — Лого + описание -->
+        <div>
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-4xl"
+              >beach_access</span
+            >
+            <span class="text-2xl font-bold">OpenSpace</span>
+          </a>
+
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A comfortable coworking space designed for productivity, creativity,
+            and meaningful work. Choose your perfect workplace anytime.
+          </p>
+        </div>
+
+        <!-- Блок 2 — Контакты -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contacts</h3>
+
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li class="flex items-center gap-2">
+              <span class="material-icons-round text-lg">location_on</span>
+              Kyiv, Ukraine
+            </li>
+
+            <li class="flex items-center gap-2">
+              <span class="material-icons-round text-lg">phone</span>
+              <a href="tel:+380000000000" class="hover:text-white transition">
+                +38 (063) 178 90 21
+              </a>
+            </li>
+
+            <li class="flex items-center gap-2">
+              <span class="material-icons-round text-lg">mail</span>
+              <a
+                href="mailto:maximkrasnopolskiy3@gmail.com"
+                class="hover:text-white transition"
+              >
+                maximkrasnopolskiy3@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Блок 3 — Социальные сети + ссылки -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Follow us</h3>
+
+          <div class="flex gap-4 mb-6">
+            <a
+              href="#"
+              class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <span class="material-icons-round text-2xl">facebook</span>
+            </a>
+            <a
+              href="https://www.instagram.com/makimakooo/"
+              class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <span class="material-icons-round text-2xl">instagram</span>
+            </a>
+            <a
+              href="#"
+              class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <span class="material-icons-round text-2xl">telegram</span>
+            </a>
+          </div>
+
+          <h3 class="text-lg font-semibold mb-4">Quick links</h3>
+
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>
+              <a href="#" class="hover:text-white transition">Home</a>
+            </li>
+            <li>
+              <a href="#next" class="hover:text-white transition">Features</a>
+            </li>
+            <li>
+              <a href="#gallery" class="hover:text-white transition">Gallery</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/20 my-8" />
+
+      <div class="text-center text-gray-400 text-sm">
+        © 2025 OpenSpace. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

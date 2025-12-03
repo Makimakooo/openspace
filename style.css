@@ -1,0 +1,7 @@
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
